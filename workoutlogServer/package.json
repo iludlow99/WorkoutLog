@@ -9,8 +9,8 @@
   "author": "Isaac Ludlow",
   "license": "MIT",
   "dependencies": {
-  	"body-parser": "^1.15.1",
-   "express": "^4.13.4",
+  	"body-parser": "^1.15.1",    //I have know idea what all this stuff inside of the 'dependencies' was
+   "express": "^4.13.4",      
    "pg": "^4.5.6",
    "pg-hstore": "^2.3.2",
    "sequelize": "^3.23.3"

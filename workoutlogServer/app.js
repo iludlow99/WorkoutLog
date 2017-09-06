@@ -2,13 +2,18 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var sequelize = require('./db.js')
-var User = sequelize.import('./models/User')
 
-User.sync(); // sync( {force: true}) WARNING: This will DROP (delete) the table!
+var User = sequelize.import(__dirname + '\\models/\\User')
+
+
+//Create a table
+User.sync(); // sync( {force: true}) WARNING: This will drop (delete) the table!
 
 app.use(bodyParser.json());
-
 app.use(require('./middleware/headers'));
+app.use('/api/user', require('./routes/user'))
+
+
 
 app.use('/api/test', function(req, res){
 	res.send("Hello World");

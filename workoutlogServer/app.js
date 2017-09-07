@@ -12,6 +12,7 @@ User.sync(); // sync( {force: true}) WARNING: This will drop (delete) the table!
 app.use(bodyParser.json());
 app.use(require('./middleware/headers'));
 app.use('/api/user', require('./routes/user'))
+app.use('/api/login', require('./routes/session'))
 
 
 

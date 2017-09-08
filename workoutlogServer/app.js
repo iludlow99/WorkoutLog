@@ -8,17 +8,18 @@ var User = sequelize.import('./models/User')
 
 
 //Create a table
-User.sync(); // sync( {force: true}) WARNING: This will drop (delete) the table!
+sequelize.sync() //User.sync(); // sync( {force: true}) WARNING: This will drop (delete) the table!
 app.use(bodyParser.json());
 
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session'))
+
 //Creating a user
 app.use('/api/user', require('./routes/user'))
 //Logging in a user
 app.use('/api/login', require('./routes/session'))
 //localhost:3000/user/login
-// app.use('./api/definition', require('./routes/definition'))
+app.use('/api/definition', require('./routes/definition'))
 
 // app.use('./api/log', require('./routes/log'))
 

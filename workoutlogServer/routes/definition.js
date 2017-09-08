@@ -6,7 +6,7 @@ var Definition = sequelize.import('../models/definition.js')
 
 router.post('/', function(req, res) {
 	//variables
-	var descrption = req.body.definition.desc
+	var description = req.body.definition.desc
 	var logType = req.body.definition.type
 	var owner = req.user.id
 
@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
 
 	Definition
 		.create({
-				descrption: descrption,
+				description: description,
 				logType: logType,
 				owner: owner
 		})
